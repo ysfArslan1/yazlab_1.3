@@ -1,0 +1,53 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <!-- Telefon ekranları için menü butonu -->
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- İsim Soyisim veya Marka İsmi -->
+            <a href="{% url 'home' %}" class="navbar-brand">Pdf Converter</a>
+        </div>
+
+        <nav class="collapse navbar-collapse" role="navigation">
+
+            <!-- Arama Çubuğu -->
+            <form class="navbar-form navbar-left" role="search" method="GET" action="">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Search on posts" value="{{ request.GET.q }}" >
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Ara">
+                    </span>
+                </div>
+            </form>
+
+            <!-- Temel Sayfalar -->
+            <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'proje:create' %}" >Pdf Ekle</a></li>
+                    <li><a href="{% url 'proje:index' %}">Anasayfa</a></li>
+                    <li><a href="http://127.0.0.1:8000/admin/">Admin</a></li>
+                    {% endif %}
+                    
+                    {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'accounts:register' %}">Üye Ol</a></li>
+                    <li><a href="{% url 'home' %}">Giriş</a></li>
+                    
+                    {% else %}
+                    <li><a href="{% url 'accounts:logout' %}">Çıkış</a></li>
+                    {% endif %}
+                
+            </ul>
+
+
+        </nav>
+
+    </div>
+</nav>

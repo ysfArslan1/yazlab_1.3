@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{# /proje/{{ proje.isim }} #}
+
+{#{% url 'detail' id=proje.isim %}#}
+
+    <div class="container">
+        {% for proje in projes %}
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="thumbnail">
+
+                        {% if proje.image %}
+                            <img src="{{ proje.pdf.url }}" class="img-responsive" >
+                        {% endif %}
+                        <div class="caption">
+                            <h3><a href="{{ proje.get_absolute_url }}">{{ proje.isim }}</a> <small></small></h3>
+                            
+                            <p>Ad:{{ proje.isim }}</p>
+                            <p>Soyad:{{ proje.soy_isim }}</p>
+                            <p>Öğrenci No:{{ proje.ogrenci_no }}</p>
+                            <p>Öğrenim türü:{{ proje.ogrenim_tur }}</p>
+                            <p>Ders Adı:{{ proje.ders_adi }}</p>
+                            <p>Proje Özeti:{{ proje.proje_ozeti }}</p>
+                            <p>Teslim Tarihi:{{ proje.proje_teslim_tarih }}</p>
+                            <p>Dönem:{{ proje.donem }}</p>
+                            <p>Proje Başlığı{{ proje.proje_baslıgı }}</p>
+                            <p>Anahtar Kelimeler:{{ proje.anahtar_kelimeler }}</p>
+                            <p>Danışman Bilgileri:{{ proje.danisman_bilgileri }}</p>
+                            <p>Juri Bilgileri:{{ proje.juri_bilgileri }}</p>
+                            <p>
+
+                            
+                              
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+       
+
+    </div>
+
+
+{% endblock %}
