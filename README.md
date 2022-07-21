@@ -11,15 +11,14 @@ Projede amaç kullanıcıların giriş yapıp pdf yüklemesi yapması sağlayara
 # Genel Yapı
 
 # Modeller:
-# Accounts: 
+## Accounts: 
 Kullanıcıların giriş yapabilme,kaydolabilme ve çıkış yapabilmeleri için gerekli olan veritabanı işlemleri ve html bağlantılarını sağlayan bir modeldir.
-# views.py: 
+## views.py: 
 Kullanıcıların giriş,kayıt ve çıkış için kullandığı fonksiyonlar bulunur. urls.py: kullanılan fonksiyonlar için url tanımlaması yapılır.
-# forms.py:
+## forms.py:
 Yapılan işlemler için gerekli form ekranları için fonksiyonlar tutulur.
 
 # Proje:
-
 Tutulmak istenen pdflerinin işlemlerinin yapıldığı ve web sayfaları için kullanılan fonksiyonları bulunduğu modeldir.
 models.py:Pdf’ten alınan bilgilerin tutulması için gereken veritabanı modeli ve fonksiyonları tutulur.
 
