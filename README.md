@@ -1,4 +1,4 @@
-# Yazlab1 3. Proje    
+# Yazlab1 3. Proje     
 
 # Web Uygulaması 
 
